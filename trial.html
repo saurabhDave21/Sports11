@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .main {
+            display: flex;
+            width: 100%;
+            height: 110vh;
+        }
+
+        .left, .right {
+            border: 5px solid grey;
+            width: 50%;
+            background-color: black;
+            padding: 10px;
+        }
+        .right {
+            border-color: red;
+        }
+
+        .header {
+            height: 50px;
+            width: 100%;
+            background-color: grey;
+            display: flex;
+            color: white;
+            font-size: 21px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+        }
+
+        .player1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #2c2b2b;
+            padding: 10px;
+            margin: 10px 0;
+            color: grey;
+        }
+
+        .player1 img {
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+        }
+
+        .player1 p {
+            flex: 1;
+            text-align: center;
+            font-size: 21px;
+        }
+
+        .player1 button {
+            padding: 7px 15px;
+            border-radius: 10px;
+            background-color: rgb(71, 66, 66);
+            color: white;
+            border: 2px solid white;
+            cursor: pointer;
+        }
+
+        .player1 button:hover {
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="left">
+            <div class="header">
+                <p>Photo</p>
+                <p>Player Name</p>
+                <p>Team</p>
+                <p>NRR</p>
+            </div>
+            <div class="team1">
+                <div class="player1">
+                    <img src="/Team1/P1.png" height="43px" width="43px">
+                    <p><span>Rohit Sharama</span></p>
+                    <p>India</p>
+                    <p>47.9%</p>
+                    <button onclick="addPlayer(this)">Add+</button>
+                </div>
+                <div class="player1">
+                    <img src="/Team1/P2.png" height="43px" width="43px">
+                    <p><span>Virat Kohil</span></p>
+                    <p style="margin-left: 31px;">India</p>
+                    <p>51.9%</p>
+                    <button onclick="addPlayer(this)"> Add+</button>
+                </div>
+                <div class="player1">
+                    <img src="/Team1/P3.png" height="43px" width="43px">
+                    <p><span>Shubhm Gil</span></p>
+                    <p style="margin-left: 25px;">India</p>
+                    <p>51.9%</p>
+                    <button onclick="addPlayer(this)">Add+</button>
+                </div>
+                <div class="player1">
+                    <img src="/Team1/P4.png" height="43px" width="43px">
+                    <p><span>K L Rahul</span></p>
+                    <p style="margin-left: 39px;">India</p>
+                    <p>51.9%</p>
+                    <button onclick="addPlayer(this)">Add+</button>
+                </div>
+                <div class="player1">
+                    <img src="/Team1/P5.png" height="43px" width="43px">
+                    <p><span>Hardik Pandey</span></p>
+                    <p>India</p>
+                    <p>51.9%</p>
+                    <button onclick="addPlayer(this)">Add+</button>
+                </div>
+                <div class="player1">
+                    <img src="/Team1/P6.png" height="43px" width="43px">
+                    <p><span>Axar Patel</span></p>
+                    <p style="margin-left: 39px;">India</p>
+                    <p>51.9%</p>
+                    <button onclick="addPlayer(this)">Add+</button>
+                </div>
+        
+                <div class="player1">
+                    <img src="/Team1/P7.png" height="43px" width="43px">
+                    <p><span>Kuldeep Yadav</span></p>
+                    <p>India</p>
+                    <p>51.9%</p>
+                    <button onclick="addPlayer(this)">Add+</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right">
+            <div class="header">
+                <p>Photo</p>
+                <p>Player Name</p>
+                <p>Team</p>
+                <p>NRR</p>
+            </div>
+            <div class="team2">
+                <div class="player1">
+                    <img src="/Team2/P1.png">
+                    <p>Babar Azam</p>
+                    <p>Pakistan</p>
+                    <p>47.9%</p>
+                    <button>Add+</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

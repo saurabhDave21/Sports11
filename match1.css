@@ -1,0 +1,182 @@
+body {
+    background-color: #1e1e1e; /* Adjust this color to match other elements */
+}
+
+.header p{
+    margin-right: 90px;
+    margin-left: 5px;
+}
+.header span{
+    position: relative;
+    right: 35px;
+}
+.team1{
+    border: 5px solid black;
+    margin-right: 750px;
+    position: relative;
+    background-color: black;
+}
+.team1 .player{
+    
+    height: 35px;
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 75px;
+}   
+.team1 span{
+    padding: 0px 15px;
+}
+.team1 .player1{
+    background-color: #2c2b2b;
+    height: 45px;
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 55px;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+
+}   
+.player1 p{
+    margin-right: 55px;
+    color: grey;
+    font-size: 21px;
+
+}
+.player1 img{
+    margin-right: 125px;
+    margin-left: 5px;
+    border-radius: 50%;
+}
+.player1 button{
+    padding: 7px 25px;
+    border-radius: 10px;
+    background-color: rgb(71, 66, 66);
+    color: white;
+    border: 2px solid white;
+ 
+}
+.player1 button:hover{  
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+.header{
+    height: 50px;
+    width: 100%;
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 21px;
+    align-items: center;
+    
+}
+.header p{
+    margin-right: 90px;
+    margin-left: 5px;
+}
+.header span{
+    position: relative;
+    right: 35px;
+}
+.team2{
+    border: 5px solid black;
+    margin-left: 750px;
+    position: relative;
+    margin-top: -810px;
+    background-color: black;
+}
+.team2 .player{
+    background-color: red;
+    height: 35px;
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 75px;
+}   
+
+.team2 .player1{
+    background-color: #2c2b2b;
+    height: 45px;
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 55px;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+
+}   
+
+
+#cart {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: nowrap;
+    gap: 15px;
+    border: 2px solid black;
+    padding: 10px;
+    margin-top: 20px;
+    background: #f8f8f8;
+    overflow-x: auto; 
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+
+.cart-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    background: white;
+    min-width: 150px;
+}
+
+
+.cart-item img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+
+.cart-item button {
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.cart-item button:hover {
+    background: darkred;
+}
+
+/* Style for the "Final Team" button */
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: darkblue;
+}

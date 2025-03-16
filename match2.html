@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="match1.css">
+</head>
+
+<body>
+    <div class="main">
+    <div class="team1">
+        <div class="header">
+            <p>Photo</p>
+            <p>Player Name</p>
+            <p>Team</p>
+            <p>NRR</p>
+
+        </div>
+        <div class="player1">
+            <img src="/Team1/P1.png" height="43px" width="43px">
+            <p><span>Rohit Sharama</span></p>
+            <p>India</p>
+            <p>47.9%</p>
+            <button onclick="addPlayer(this)">Add+</button>
+        </div>
+        <div class="player1">
+            <img src="/Team1/P2.png" height="43px" width="43px">
+            <p><span>Virat Kohil</span></p>
+            <p style="margin-left: 31px;">India</p>
+            <p>51.9%</p>
+            <button onclick="addPlayer(this)"> Add+</button>
+        </div>
+        <div class="player1">
+            <img src="/Team1/P3.png" height="43px" width="43px">
+            <p><span>Shubhm Gil</span></p>
+            <p style="margin-left: 25px;">India</p>
+            <p>51.9%</p>
+            <button onclick="addPlayer(this)">Add+</button>
+        </div>
+        <div class="player1">
+            <img src="/Team1/P4.png" height="43px" width="43px">
+            <p><span>K L Rahul</span></p>
+            <p style="margin-left: 39px;">India</p>
+            <p>51.9%</p>
+            <button onclick="addPlayer(this)">Add+</button>
+        </div>
+        <div class="player1">
+            <img src="/Team1/P5.png" height="43px" width="43px">
+            <p><span>Hardik Pandey</span></p>
+            <p>India</p>
+            <p>51.9%</p>
+            <button onclick="addPlayer(this)">Add+</button>
+        </div>
+        <div class="player1">
+            <img src="/Team1/P6.png" height="43px" width="43px">
+            <p><span>Axar Patel</span></p>
+            <p style="margin-left: 39px;">India</p>
+            <p>51.9%</p>
+            <button onclick="addPlayer(this)">Add+</button>
+        </div>
+
+        <div class="player1">
+            <img src="/Team1/P7.png" height="43px" width="43px">
+            <p><span>Kuldeep Yadav</span></p>
+            <p>India</p>
+            <p>51.9%</p>
+            <button onclick="addPlayer(this)">Add+</button>
+        </div>
+    </div>
+    </div>
+    <div class="team2">
+        <div class="header">
+            <p>Photo</p>
+            <p>Player Name</p>
+            <p>Team</p>
+            <p><span>NRR</span></p>
+
+        </div>
+        <div class="player1">
+            <img src="/Team2/P1.png" height="43px" width="43px">
+            <p><span>Pat Cummins</span></p>
+            <p>Australia</p>
+            <p>47.9%</p>
+            <button onclick="addPlayer(this)">Add+</button>
+        </div>
+        <div class="player1">
+            <img src="/Team2/P2.png" height="43px" width="43px">
+            <p><span>Cameron Green</span></p>
+            <p style="margin-left: -16px;">Australia</p>
+            <p>51.9%</p>
+            <button onclick="addPlayer(this)">Add+</button>
+        </div>
+        <div class="player1">
+            <img src="/Team2/P3.png" height="43px" width="43px">
+            <p><span>Travis Head</span></p>
+            <p style="margin-left: 9px;">Australia</p>
+            <p>51.9%</p>
+            <button onclick="addPlayer(this)">Add+</button>
+        </div>
+        <div class="player1">
+            <img src="/Team2/P4.jpeg" height="43px" width="43px">
+            <p><span>Nathan Lyon</span></p>
+            <p style="margin-right: 58px;">Australia</p>
+            <p>51.9%</p>
+            <button onclick="addPlayer(this)">Add+</button>
+        </div>
+        <div class="player1">
+            <img src="/Team2/P5.png" height="43px" width="43px">
+            <p><span>Glenn Maxwell</span></p>
+            <p style="margin-right: 33px;">Australia</p>
+            <p>51.9%</p>
+            <button onclick="addPlayer(this)">Add+</button>
+        </div>
+        <div class="player1">
+            <img src="/Team2/P6.jpeg" height="43px" width="43px">
+            <p><span>Lance Morris</span></p>
+            <p style="margin-right: 52px;">Australia</p>
+            <p>51.9%</p>
+            <button onclick="addPlayer(this)">Add+</button>
+        </div>
+
+        <div class="player1">
+            <img src="/Team2/P7.png" height="43px" width="43px">
+            <p><span>Marcus Stoinis</span></p>
+            <p>Australia</p>
+            <p>51.9%</p>
+            <button onclick="addPlayer(this)">Add+</button>
+        </div>
+    </div>
+    </div>
+    <div id="cart"></div>
+    <button onclick="finalizeTeam()">Final Team</button>
+</div>
+    <script>
+        let selectedPlayers = [];
+        const maxPlayers = 11;
+    
+        function addPlayer(button) {
+            const playerContainer = button.parentElement;
+            const imgSrc = playerContainer.querySelector("img").src;
+            const playerName = playerContainer.querySelector("p").innerText;
+    
+            if (selectedPlayers.length >= maxPlayers) {
+                alert("You can only select up to 11 players.");
+                return;
+            }
+    
+            if (selectedPlayers.find(player => player.name === playerName)) {
+                alert("Player already added!");
+                return;
+            }
+    
+            selectedPlayers.push({ name: playerName, img: imgSrc });
+            updateCart();
+           
+        }
+    
+        function updateCart() {
+            const cartContainer = document.getElementById("cart");
+            cartContainer.innerHTML = "";
+            cartContainer.style.background="black";
+            const rowDiv = document.createElement("div");
+            rowDiv.classList.add("cart-row");
+    
+            selectedPlayers.forEach(player => {
+                const playerDiv = document.createElement("div");
+                playerDiv.classList.add("cart-item");
+                playerDiv.style.background="#2c2b2b";
+                playerDiv.style.color="white";
+                playerDiv.innerHTML = `
+                    <img src="${player.img}" height="50" width="50" style="border-radius:50%;">
+                    <span>${player.name}</span>
+                    <button onclick="removePlayer('${player.name}')">❌</button>
+                `;
+                rowDiv.appendChild(playerDiv);
+                
+            });
+    
+            cartContainer.appendChild(rowDiv);
+        }
+    
+        function removePlayer(playerName) {
+            selectedPlayers = selectedPlayers.filter(player => player.name !== playerName);
+            updateCart();
+        }
+    
+        function finalizeTeam() {
+            if (selectedPlayers.length < 11) {
+                alert("You must select exactly 11 players to finalize the team.");
+            } else {
+                // Store players in localStorage
+                localStorage.setItem("finalTeam", JSON.stringify(selectedPlayers));
+    
+                // Redirect to next page
+                window.location.href = "final_team1.html";
+            }
+        }
+
+     
+
+
+       
+    </script>
+    
+</body>
+
+</html>

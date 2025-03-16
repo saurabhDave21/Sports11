@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Team</title>
+    <link rel="stylesheet" href="match1.css">
+</head>
+
+<body>
+    <h2>Final Team</h2>
+    <div id="final-team-container"></div>
+    
+
+    <script>
+        function loadFinalTeam() {
+            const finalTeam = JSON.parse(localStorage.getItem("finalTeam")) || [];
+            const container = document.getElementById("final-team-container");
+
+            if (finalTeam.length === 0) {
+                container.innerHTML = "<p>No players selected.</p>";
+                return;
+            }
+
+            finalTeam.forEach(player => {
+                const playerDiv = document.createElement("div");
+                playerDiv.classList.add("player-card");
+                playerDiv.innerHTML = `
+                    <img src="${player.img}" height="50" width="50" style="border-radius:50%;">
+                    <p>${player.name}</p>
+                `;
+                container.appendChild(playerDiv);
+            });
+        }
+
+       
+        window.onload = loadFinalTeam;
+    </script>
+
+    <style>
+        #final-team-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .player-card {
+            color: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            width: 120px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .player-card img {
+            display: block;
+            margin: 0 auto 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        h2{
+            color: white;
+        }
+        .pts{
+            color: white;
+            display: flex;
+            flex-direction:column;
+            position: relative;
+            left:45%;
+        }
+        .pts h3{
+            font-size: 5vh;
+        }
+        #totalRun,#totalWts,#totalPts{
+            font-size: 5vh;
+            
+        }
+    </style>
+    <div class="pts">
+     <h3>Cricket Match Status</h3>
+     <div id="totalRun"><span>Total Runs: 0</span></div>
+     <div id="totalWts"><span> Wicket: 0</span></div>
+     <div id="totalPts"><span>Total Points: 0</span></div>
+    </div>
+     <script src="Pts.js"></script>
+</body>
+
+
+</html>
